@@ -1,0 +1,19 @@
+﻿<UserControl
+    x:Class="ree7.Utils.Controls.SlidingTextBlock"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SltbApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+	<StackPanel Orientation="Horizontal">
+		<TextBlock x:Name="InnerTextBlock" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5">
+			<TextBlock.RenderTransform>
+				<CompositeTransform TranslateX="-10"/>
+			</TextBlock.RenderTransform>
+		</TextBlock>
+	</StackPanel>
+</UserControl>
