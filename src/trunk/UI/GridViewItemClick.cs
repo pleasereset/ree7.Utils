@@ -26,17 +26,55 @@ namespace ree7.Utils.UI
         private static void CommandPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             // Attach click handler
-            (d as GridView).ItemClick += gridView_ItemClick;
+            (d as GridView).ItemClick += ItemClick;
         }
  
-        private static void gridView_ItemClick(object sender, ItemClickEventArgs e)
+        private static void ItemClick(object sender, ItemClickEventArgs e)
         {
             // Get GridView
-            var gridView = (sender as GridView);
+            var view = (sender as GridView);
  
             // Get command
-            ICommand command = GetCommand(gridView);
+            ICommand command = GetCommand(view);
  
+            // Execute command
+            command.Execute(e.ClickedItem);
+        }
+    }
+
+    public class ListViewItemClick
+    {
+        public static readonly DependencyProperty CommandProperty =
+            DependencyProperty.RegisterAttached(
+            "Command",
+            typeof(ICommand),
+            typeof(ListViewItemClick),
+            new PropertyMetadata(null, CommandPropertyChanged));
+
+        public static void SetCommand(DependencyObject attached, ICommand value)
+        {
+            attached.SetValue(CommandProperty, value);
+        }
+
+        public static ICommand GetCommand(DependencyObject attached)
+        {
+            return (ICommand)attached.GetValue(CommandProperty);
+        }
+
+        private static void CommandPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            // Attach click handler
+            (d as ListView).ItemClick += ItemClick;
+        }
+
+        private static void ItemClick(object sender, ItemClickEventArgs e)
+        {
+            // Get ListView
+            var view = (sender as ListView);
+
+            // Get command
+            ICommand command = GetCommand(view);
+
             // Execute command
             command.Execute(e.ClickedItem);
         }
