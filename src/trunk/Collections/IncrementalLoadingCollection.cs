@@ -95,6 +95,14 @@ namespace ree7.Utils.Collections
 		/// </summary>
 		public CoreDispatcher Dispatcher { get; set; }
 
+		protected override void ClearItems()
+		{
+			base.ClearItems();
+
+			currentOffset = 0;
+			MaxItems = MaxItemsNoLimit;
+		}
+
 
 		/// <summary>
 		/// Called by the view when more items are needed
