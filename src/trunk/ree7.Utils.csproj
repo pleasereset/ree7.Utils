@@ -35,6 +35,10 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <Page Include="Controls\ContentZoomControl\ContentZoomControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\SlidingTextBlock\SlidingTextBlock.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -58,6 +62,9 @@
     <Compile Include="Collections\AlphaGroupedCollectionAdapter.cs" />
     <Compile Include="Collections\GroupedCollectionAdapter.cs" />
     <Compile Include="Collections\IncrementalLoadingCollection.cs" />
+    <Compile Include="Controls\ContentZoomControl\ContentZoomControl.xaml.cs">
+      <DependentUpon>ContentZoomControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FlipViewIndicator\FlipViewIndicator.cs" />
     <Compile Include="Controls\ColumnLayoutSizeSource.cs" />
     <Compile Include="Controls\RatingControl\RatingControl.xaml.cs">
