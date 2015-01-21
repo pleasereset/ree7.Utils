@@ -26,7 +26,7 @@ namespace ree7.Utils.Controls
 			this.InitializeComponent();
 
 			Container.IsHitTestVisible = true;
-			Container.ManipulationMode = ManipulationModes.Scale;
+			Container.ManipulationMode = ManipulationModes.Scale
 				| ManipulationModes.TranslateY
 				| ManipulationModes.TranslateInertia
 				| ManipulationModes.TranslateX;
