@@ -19,6 +19,16 @@
 					<QuadraticEase EasingMode="EaseOut"/>
 				</DoubleAnimation.EasingFunction>
 			</DoubleAnimation>
+			<DoubleAnimation Duration="0:0:0.2" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Container" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<QuadraticEase EasingMode="EaseOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
+			<DoubleAnimation Duration="0:0:0.2" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="Container" d:IsOptimized="True">
+				<DoubleAnimation.EasingFunction>
+					<QuadraticEase EasingMode="EaseOut"/>
+				</DoubleAnimation.EasingFunction>
+			</DoubleAnimation>
 		</Storyboard>
 	</UserControl.Resources>
 

@@ -9,8 +9,8 @@ namespace ree7.Utils.Controls
 {
 	public enum ContentZoomControlState
 	{
-		Normal,
-		Zoomed
+		Still,
+		FreeMoving
 	}
 
 	/// <summary>
@@ -20,20 +20,18 @@ namespace ree7.Utils.Controls
 	{
 		double minScale = 0.9;
 		double previousScale = 1.0;
+		bool manipulationEnabled = false;
 
 		public ContentZoomControl()
 		{
 			this.InitializeComponent();
 
 			Container.IsHitTestVisible = true;
-			Container.ManipulationMode = ManipulationModes.Scale
-				| ManipulationModes.TranslateY
-				| ManipulationModes.TranslateInertia
-				| ManipulationModes.TranslateX;
 			Container.ManipulationStarted += Container_ManipulationStarted;
 			Container.ManipulationDelta += Container_ManipulationDelta;
 			Container.ManipulationCompleted += Container_ManipulationCompleted;
 			Container.RenderTransformOrigin = new Point(0.5, 0.5);
+			Container.Tapped += Container_Tapped;
 		}
 
 		#region public object Content
@@ -59,36 +57,49 @@ namespace ree7.Utils.Controls
 		{
 			get
 			{
-				CompositeTransform transform = (CompositeTransform)Container.RenderTransform;
-				if (transform.ScaleX > 1) return ContentZoomControlState.Zoomed;
-				return ContentZoomControlState.Normal;
+				return manipulationEnabled ? ContentZoomControlState.FreeMoving : ContentZoomControlState.Still;
 			}
 		}
-
 		public event EventHandler StateChanged;
+
+		public void SetManipulationEnabled(bool value)
+		{
+			if (value)
+			{
+				Container.ManipulationMode = ManipulationModes.Scale
+					| ManipulationModes.TranslateY
+					| ManipulationModes.TranslateInertia
+					| ManipulationModes.TranslateX;
+			}
+			else
+			{
+				Container.ManipulationMode = ManipulationModes.System;
+				previousScale = 1.0;
+			}
+			manipulationEnabled = value;
+
+			if (StateChanged != null) StateChanged(this, EventArgs.Empty);
+		}
 
 		void Container_ManipulationCompleted(object sender, ManipulationCompletedRoutedEventArgs e)
 		{
 			CompositeTransform transform = (CompositeTransform)Container.RenderTransform;
 
-			if(transform.ScaleX < 1)
+			if (transform.ScaleX < 1)
 			{
-				ScaleBack.Begin();
-				previousScale = 1.0;
+				SetManipulationEnabled(false);
 			}
 			else
 			{
 				previousScale = transform.ScaleX;
 			}
-
-			if (StateChanged != null) StateChanged(this, EventArgs.Empty);
 		}
 
 		void Container_ManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
 		{
 			CompositeTransform transform = (CompositeTransform)Container.RenderTransform;
 
-			double scale = (previousScale + e.Cumulative.Scale) -1;
+			double scale = (previousScale + e.Cumulative.Scale) - 1;
 			if (scale < minScale) scale = minScale;	// Can only zoom in
 
 			transform.ScaleX = scale;
@@ -103,8 +114,8 @@ namespace ree7.Utils.Controls
 			double controlHeight = this.ActualHeight;
 			double controlWidth = this.ActualWidth;
 
-			double dX = Math.Max(objectWidth - controlWidth, 0)/2;
-			double dY = Math.Max(objectHeight - controlHeight, 0)/2;
+			double dX = Math.Max(objectWidth - controlWidth, 0) / 2;
+			double dY = Math.Max(objectHeight - controlHeight, 0) / 2;
 
 			if (transform.TranslateX > dX) transform.TranslateX = dX;
 			else if (transform.TranslateX < -dX) transform.TranslateX = -dX;
@@ -115,7 +126,20 @@ namespace ree7.Utils.Controls
 
 		void Container_ManipulationStarted(object sender, ManipulationStartedRoutedEventArgs e)
 		{
-			if (StateChanged != null) StateChanged(this, EventArgs.Empty);
+
+		}
+
+		void Container_Tapped(object sender, TappedRoutedEventArgs e)
+		{
+			if (!manipulationEnabled)
+			{
+				SetManipulationEnabled(true);
+			}
+			else
+			{
+				ScaleBack.Begin();
+				SetManipulationEnabled(false);
+			}
 		}
 	}
 }
