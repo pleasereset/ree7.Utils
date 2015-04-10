@@ -87,8 +87,8 @@
   <ItemGroup>
     <Compile Include="Actions\OpenFlyoutAction.cs" />
     <Compile Include="Controls\StatusBarPadding.cs" />
-    <Compile Include="Controls\ApplicationBarPadding.cs" />
     <Compile Include="Controls\PageExtensions.cs" />
+    <Compile Include="Controls\SystemChromeVerticalPadding.cs" />
     <Compile Include="UI\PageStatusBar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
