@@ -49,13 +49,11 @@ namespace ree7.Utils.UI
 		public static readonly DependencyProperty ProgressBarMessageProperty =
 			DependencyProperty.RegisterAttached("ProgressBarMessage", typeof(string), typeof(PageStatusBar), new PropertyMetadata(null, ProgressBarMessagePropertyChanged));
 
-		private static async void ProgressBarMessagePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+		private static void ProgressBarMessagePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
 			string value = (string)e.NewValue;
 			StatusBar.GetForCurrentView().ProgressIndicator.Text = value;
 		}
-		#endregion ProgressBarMessage
-
-		
+		#endregion ProgressBarMessage		
 	}
 }
