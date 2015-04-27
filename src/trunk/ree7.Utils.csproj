@@ -84,6 +84,7 @@
     <Compile Include="Converters\StringCaseConverter.cs" />
     <Compile Include="Converters\StringFormatConverter.cs" />
     <Compile Include="Converters\StringToPathGeometryConverter.cs" />
+    <Compile Include="Helpers\AnimationHelper.cs" />
     <Compile Include="UI\DisplayOnCollection.cs" />
     <Compile Include="Helpers\DPIHelper.cs" />
     <Compile Include="Helpers\FrameworkElementExtensions.cs" />
