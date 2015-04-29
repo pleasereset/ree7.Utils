@@ -24,8 +24,12 @@ namespace ree7.Utils.UI
 
 		private static void OnVisualStateChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
 		{
-			Control c = d as Control;
-			VisualStateManager.GoToState(c, (string)e.NewValue, true);
+			try
+			{
+				Control c = d as Control;
+				VisualStateManager.GoToState(c, (string)e.NewValue, true);
+			}
+			catch { }
 		}
 
 		#endregion public string VisualState
