@@ -7,7 +7,7 @@ namespace ree7.Utils.UI
 	{
 		// Can be applied on any control. Will use animations/transitions 
 		// between states.
-		#region public string VisualState
+		#region public static string VisualState
 		public static string GetVisualState(Control obj)
 		{
 			return (string)obj.GetValue(VisualStateProperty);
@@ -33,5 +33,17 @@ namespace ree7.Utils.UI
 		}
 
 		#endregion public string VisualState
+	}
+
+	public static class XamlExtensionsStatic
+	{
+		public static void ApplyVisualState(this Control c)
+		{
+			string state = c.GetValue(XamlExtensions.VisualStateProperty) as string;
+			if (state != null)
+			{
+				VisualStateManager.GoToState(c, state, false);
+			}
+		}
 	}
 }
