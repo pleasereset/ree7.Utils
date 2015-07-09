@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ree7.Utils.Extensions
+namespace ree7.Utils
 {
-	class StringExtensions
+	public static class StringExtensions
 	{
+		public static Uri ToAbsoluteUri(this string s)
+		{
+			if (string.IsNullOrWhiteSpace(s)) return null;
+			return new Uri(s, UriKind.Absolute);
+		}
 	}
 }

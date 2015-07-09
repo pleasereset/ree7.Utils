@@ -115,7 +115,7 @@ namespace ree7.Utils.Controls
 			double containerReferenceSize = Container.ActualWidth;
 
 			double availableWidth = (containerReferenceSize - (Columns * GutterSize)) - 1; // -1 to avoid rounding errors
-			ItemWidth = availableWidth / Columns;
+			ItemWidth = Math.Truncate(availableWidth / Columns);
 			ItemHeight = ItemWidth * AspectRatio;
 		}
 	}

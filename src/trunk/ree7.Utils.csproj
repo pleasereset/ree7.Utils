@@ -73,6 +73,7 @@
     <Compile Include="Controls\SlidingTextBlock\SlidingTextBlock.xaml.cs">
       <DependentUpon>SlidingTextBlock.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SquareBorder.cs" />
     <Compile Include="Converters\BoolInverterConverter.cs" />
     <Compile Include="Converters\BoolOpacityConverter.cs" />
     <Compile Include="Converters\BoolVisibilityConverter.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Converters\StringCaseConverter.cs" />
     <Compile Include="Converters\StringFormatConverter.cs" />
     <Compile Include="Converters\StringToPathGeometryConverter.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\AnimationHelper.cs" />
     <Compile Include="UI\DisplayOnCollection.cs" />
     <Compile Include="Helpers\DPIHelper.cs" />
