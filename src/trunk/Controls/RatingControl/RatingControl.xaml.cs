@@ -77,7 +77,17 @@ namespace ree7.Utils.Controls
         #region public double SymbolSize
         public double SymbolSize
 		{
-			get { return (double)GetValue(SymbolSizeProperty); }
+			get
+            {
+                try
+                {
+                    return (double)GetValue(SymbolSizeProperty);
+                }
+                catch
+                {
+                    return 20.0;
+                }
+            }
 			set { SetValue(SymbolSizeProperty, value); }
 		}
 
@@ -97,13 +107,23 @@ namespace ree7.Utils.Controls
         /// </summary>
         public double SymbolSpacing
         {
-            get { return (double)GetValue(SymbolSpacingProperty); }
+            get
+            {
+                try
+                {
+                    return (double)GetValue(SymbolSpacingProperty);
+                }
+                catch
+                {
+                    return 0.0;
+                }
+            }
             set { SetValue(SymbolSpacingProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for SymbolSpacing.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty SymbolSpacingProperty =
-            DependencyProperty.Register("SymbolSpacing", typeof(double), typeof(RatingControl), new PropertyMetadata(0));
+            DependencyProperty.Register("SymbolSpacing", typeof(double), typeof(RatingControl), new PropertyMetadata(0.0));
 
         #endregion
 
