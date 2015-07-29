@@ -20,21 +20,21 @@
 	<Grid x:Name="ControlRoot" Background="{Binding Background, ElementName=Root}"
 		  HorizontalAlignment="Stretch">
 		<StackPanel Orientation="Horizontal" x:Name="HollowContainer" VerticalAlignment="Center" Opacity="0.33">
-			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" />
-			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" />
-			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" />
-			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" />
-			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" />
+			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" Tapped="OnSymbolTapped"/>
+			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" Tapped="OnSymbolTapped"/>
+			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" Tapped="OnSymbolTapped"/>
+			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" Tapped="OnSymbolTapped"/>
+			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" Tapped="OnSymbolTapped"/>
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" x:Name="FilledContainer" VerticalAlignment="Center">
 			<StackPanel.Clip>
 				<RectangleGeometry Rect="0,0,0,20"/>
 			</StackPanel.Clip>
-			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" />
-			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" />
-			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" />
-			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" />
-			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" />
+			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" Tapped="OnSymbolTapped"/>
+			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" Tapped="OnSymbolTapped"/>
+			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" Tapped="OnSymbolTapped"/>
+			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" Tapped="OnSymbolTapped"/>
+			<Path Fill="{Binding Foreground, ElementName=Root}" Style="{StaticResource SymbolStyle}" Data="F1M1296.83,526.473L1306.72,546.509 1328.83,549.723 1312.83,565.319 1316.61,587.34 1296.83,576.943 1277.06,587.34 1280.83,565.319 1264.83,549.723 1286.94,546.509 1296.83,526.473z" Tapped="OnSymbolTapped"/>
 		</StackPanel>
     </Grid>
 </UserControl>

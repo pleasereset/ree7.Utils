@@ -74,18 +74,21 @@
       <DependentUpon>SlidingTextBlock.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\SquareBorder.cs" />
+    <Compile Include="Controls\WrapPanel.cs" />
     <Compile Include="Converters\BoolInverterConverter.cs" />
     <Compile Include="Converters\BoolOpacityConverter.cs" />
     <Compile Include="Converters\BoolVisibilityConverter.cs" />
     <Compile Include="Converters\DayRelativeConverter.cs" />
     <Compile Include="Converters\DoubleVisibilityConverter.cs" />
     <Compile Include="Converters\Internals\DateTimeFormatHelper.cs" />
+    <Compile Include="Converters\Internals\PathGeometryConverter.cs" />
     <Compile Include="Converters\NullOrEmptyVisibilityConverter.cs" />
     <Compile Include="Converters\RelativeDateConverter.cs" />
     <Compile Include="Converters\StringCaseConverter.cs" />
     <Compile Include="Converters\StringFormatConverter.cs" />
     <Compile Include="Converters\StringToPathGeometryConverter.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\VisualTreeHelperExtensions.cs" />
     <Compile Include="Helpers\AnimationHelper.cs" />
     <Compile Include="UI\DisplayOnCollection.cs" />
     <Compile Include="Helpers\DPIHelper.cs" />
