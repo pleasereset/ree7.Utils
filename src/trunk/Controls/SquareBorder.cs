@@ -43,11 +43,11 @@ namespace ree7.Utils.Controls
 
 			if (MasterDimension == Orientation.Horizontal)
 			{
-				this.Height = this.Width;
+				this.Height = this.ActualWidth;
 			}
 			else
 			{
-				this.Width = this.Height;
+				this.Width = this.ActualHeight;
 			}
 
 			rendering = false;
